@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class=container align="center">
+    {%for msg in messages%}
+    <h3>{{msg}}</h3>
+    {%endfor%}
+    </div>
+    
+    <div class=container align="center">
+    <table border="2">
+        <th>productid</th>
+        <th>productname</th>
+        <th>productdesc</th>
+        <th>productprice</th>
+        <th>productdiscount</th>
+        <th>productimage</th>
+        <th>productmodify</th>
+        <th>productdelete</th>
+
+        {%for i in form%}
+        <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.pname}}</td>
+        <td>{{i.pdesc}}</td>
+        <td>{{i.pprice}}</td>
+        <td>{{i.pdiscount}}</td>
+        <td> <img src="{{i.pimg.url}}" alt="no img found" height="100" width="150"></td>
+        <td> <a href='/product/modifyp/{{i.id}}'>MODIFY</a></td>
+        <td> <a href='/product/deletep/{{i.id}}'>DELETE</a></td>
+        </tr>
+        {%endfor%}
+        </table>   
+    </div>
+</body>
+</html>

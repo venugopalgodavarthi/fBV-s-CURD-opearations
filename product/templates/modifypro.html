@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class=container align="center">
+        {%for msg in messages%}
+        <h3>{{msg}}</h3>
+        {%endfor%}
+        </div>
+    <div class=container align="center">
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token%}
+<table>
+<tr><th><label for="id_pname">Pname:</label></th><td><input type="text" name="pname" maxlength="30" required id="id_pname" value="{{upd.pname}}"></td></tr>
+<tr><th><label for="id_pdesc">Pdesc:</label></th><td><input type="text" name="pdesc" maxlength="200" required id="id_pdesc" value="{{upd.pdesc}}"></td></tr>
+<tr><th><label for="id_pprice">Pprice:</label></th><td><input type="number" name="pprice" step="any" required id="id_pprice" value="{{upd.pprice}}"></td></tr>
+<tr><th><label for="id_pdiscount">Pdiscount:</label></th><td><input type="number" name="pdiscount" step="any" required id="id_pdiscount" value="{{upd.pdiscount}}"></td></tr>
+<tr><th><label for="id_pimage">Pimgage:</label></th><td><input type="file" name="pimage" accept="image/*" id="id_pimage"></td></tr>
+</table>
+<br>
+<br>
+<input type="submit" value="UPDATE RECORD">
+</form>
+<label for="" >productimage:</label></th><td><img src="{{upd.pimg.url}}" alt="no img found" height="100" width="150">
+<br><br>
+<button><a href='/product/readp/'>LIST OF PRODUCTS</a></button></td>
+</div>
+
+</body>
+</html>
